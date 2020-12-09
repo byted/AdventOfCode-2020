@@ -7,7 +7,6 @@ def run_code(instructions):
     ip = 0
 
     nop_jmp_stack = []
-    retrace = False
 
     while True:
         if ip in visited:
