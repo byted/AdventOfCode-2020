@@ -14,8 +14,8 @@ def chinese_theorem(busses):
         # all vals are prime -> simply multiply all of them
         return math.prod(vals)
 
-    # for this theorem to work, bus durations to be [pairwise coprime](https://en.wikipedia.org/wiki/Coprime_integers#:~:text=Pairwise%20coprimality)
-    # which is the case if all durations are prime numbers - which seems to be the case for all given inputs but let's double check...
+    # for this theorem to work, bus durations have to be [pairwise coprime](https://en.wikipedia.org/wiki/Coprime_integers#:~:text=Pairwise%20coprimality)
+    # which is the case if all durations are prime numbers - and seems to be the case for all given inputs but let's double check...
     _, durations_only = zip(*busses)
     if any(not is_prime(d) for d in durations_only):
         print(f'Uh oh, bus durations are not prime - we need a different solution')
