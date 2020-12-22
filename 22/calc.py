@@ -21,7 +21,7 @@ def play_combat(p1, p2):
     return p1 if len(p2) == 0 else p2
 
 winner = play_combat(p1, p2)
-winner_score = sum([(ix+1) * card for ix, card in enumerate(reversed(winner))])
+winner_score = sum([ix * card for ix, card in enumerate(reversed(winner), 1)])
 
 print(f'Challenge 1: Winner\'s score is {winner_score}')
 
@@ -48,6 +48,6 @@ def play_combat_rec(p1, p2, layer=0):
     return ('p1', p1) if len(p2) == 0 else ('p2', p2)
 
 _, winners_stack = play_combat_rec(p1, p2)
-winner_score = sum([(ix+1) * card for ix, card in enumerate(reversed(winners_stack))])
+winner_score = sum([ix * card for ix, card in enumerate(reversed(winners_stack), 1)])
 
 print(f'Challenge 2: Winner\'s score is {winner_score}')
